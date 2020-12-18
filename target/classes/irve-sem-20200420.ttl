@@ -1,0 +1,197 @@
+@prefix : <http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420> .
+
+<http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#hasAcces
+:hasAcces rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#hasLatitude
+:hasLatitude rdf:type owl:ObjectProperty ;
+             rdfs:domain :Position ;
+             rdfs:range :Latitude .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#hasLongitude
+:hasLongitude rdf:type owl:ObjectProperty ;
+              rdfs:domain :Position ;
+              rdfs:range :Longitude .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#isFree
+:isFree rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :hasAcces ;
+        owl:inverseOf :isPayable ;
+        rdfs:domain :ElectricVehicleCharger ;
+        rdfs:range :Free .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#isPayable
+:isPayable rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasAcces ;
+           rdf:type owl:InverseFunctionalProperty ;
+           rdfs:domain :ElectricVehicleCharger ;
+           rdfs:range :Payable .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#AccesCharger
+:AccesCharger rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Accessibility
+:Accessibility rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#AddressStation
+:AddressStation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Brand
+:Brand rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#CSS
+:CSS rdf:type owl:Class ;
+     rdfs:subClassOf :TypeCharger .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Chademo
+:Chademo rdf:type owl:Class ;
+         rdfs:subClassOf :TypeCharger .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Domestic
+:Domestic rdf:type owl:Class ;
+          rdfs:subClassOf :TypeCharger .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#ElectricVehicleCharger
+:ElectricVehicleCharger rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Free
+:Free rdf:type owl:Class ;
+      rdfs:subClassOf :AccesCharger .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#IdCharger
+:IdCharger rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#IdStation
+:IdStation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Insee
+:Insee rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Latitude
+:Latitude rdf:type owl:Class ;
+          rdfs:subClassOf :Position .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Longitude
+:Longitude rdf:type owl:Class ;
+           rdfs:subClassOf :Position .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#NameStation
+:NameStation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#NumberOfCharger
+:NumberOfCharger rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Observations
+:Observations rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Operator
+:Operator rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Payable
+:Payable rdf:type owl:Class ;
+         rdfs:subClassOf :AccesCharger .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Planner
+:Planner rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Position
+:Position rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#Power
+:Power rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#TypeCharger
+:TypeCharger rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#12H-24
+<http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#12H-24> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf :Accessibility .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#24H-24H
+<http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#24H-24H> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf :Accessibility .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#6J-7
+<http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#6J-7> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf :Accessibility .
+
+
+###  http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#7J-7
+<http://www.semanticweb.org/théo/ontologies/2020/11/irve-sem-20200420#7J-7> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf :Accessibility .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AccesCharger
+                :Accessibility
+                :AddressStation
+                :Brand
+                :ElectricVehicleCharger
+                :IdCharger
+                :IdStation
+                :Insee
+                :Latitude
+                :Longitude
+                :NameStation
+                :NumberOfCharger
+                :Observations
+                :Operator
+                :Planner
+                :Position
+                :Power
+                :TypeCharger
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

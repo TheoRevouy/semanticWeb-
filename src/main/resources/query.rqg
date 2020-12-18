@@ -1,0 +1,42 @@
+SELECT ?charger ?type
+WHERE {
+  ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?type.
+ FILTER (?type = "Chademo")
+}
+
+SELECT ?charger ?latitude ?longitude
+WHERE {
+  ?charger <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?latitude.
+  ?charger <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?longitude
+}
+ORDER BY ?latitude
+
+SELECT ?charger ?type
+WHERE {
+  ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?type.
+  ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?insee
+ FILTER (?type = "Chademo" && ?insee="42218")
+}
+
+SELECT DISTINCT ?charger ?type
+WHERE {
+  ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?type.
+  ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?insee
+ FILTER (?type = "Chademo" || ?type="CSS" || ?type="Domestique, Type 2" && ?insee="42218")
+}
+
+SELECT DISTINCT ?charger ?insee
+WHERE {
+  ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?insee
+ FILTER (?insee = "42205" || ?insee="42207" || ?insee="42095" || ?insee="42218" || ?insee="42275" || ?insee="42044" || ?insee="42330" || ?insee="42186" || ?insee="42237" || ?insee="42275" || ?insee="42223")
+}
+ORDER BY ?insee
+
+SELECT DISTINCT ?charger ?adress ?name
+WHERE{
+ ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?name.
+ ?charger <http://www.w3.org/2000/01/rdf-schema#label> ?adress.
+  FILTER(?name="Bellevue Hopital" && ?adress = "Place Bellevue 42000 Saint Etienne" || ?name="Hopital Nord"  && ?adress="102 Avenue Albert Raimond 42270 Saint Priest en Jarrez")
+}
+
+
